@@ -63,7 +63,66 @@
       margin-bottom: 20px;
     }
 
-    /* --- GRID LAYOUT CSS --- */
+    /* --- EXPERIENCE SECTION CSS --- */
+    .experience-item {
+      display: flex;
+      align-items: flex-start; /* Changed to top-align for better layout with lists */
+      background: white;
+      padding: 20px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      margin-bottom: 15px; /* Spacing between job entries */
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+
+    .experience-logo {
+      width: 80px; /* Increased from 60px */
+      height: 80px; /* Increased from 60px */
+      object-fit: contain; /* Keeps logo proportions correct */
+      margin-right: 20px;
+      border-radius: 4px;
+      background-color: #fff; /* White background for transparent logos */
+      flex-shrink: 0; /* Prevents logo from squishing */
+    }
+
+    .experience-details {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .experience-company {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #111;
+      margin: 0;
+    }
+
+    .experience-title {
+      font-size: 1rem;
+      color: #555;
+      margin: 4px 0 0 0;
+    }
+    
+    .experience-date {
+      font-size: 0.85rem;
+      color: #888;
+      margin-top: 4px;
+    }
+
+    /* Styles for the responsibilities list */
+    .experience-details ul {
+      margin: 12px 0 0 0;
+      padding-left: 20px;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .experience-details li {
+      margin-bottom: 6px;
+    }
+
+    /* --- GRID LAYOUT CSS (Projects) --- */
     .projects-grid {
       display: grid;
       /* This creates exactly 2 columns */
@@ -144,12 +203,11 @@
   </style>
 </head>
 <body>
-
   <header class="container">
-    <br><br>
+    <br><br><br>
     <!-- EDIT HERE: Your Name and Title -->
     <h1>Alex Nelson</h1>
-    <p class="subtitle">Software Developer / Computer Science Student At University of South Florida</p>
+    <p class="subtitle">Software Developer / CS Student At University of South Florida</p>
     
     <nav>
       <a href="#about">About</a>
@@ -159,8 +217,16 @@
     </nav>
   </header>
 
+
+
+
+  
   <br>
 
+
+
+
+  
   <main class="container">
 
     <section id="about">
@@ -174,11 +240,14 @@
 
 
 
+    
     <br>
 
 
 
 
+    
+    <!-- NEW EXPERIENCE SECTION -->
     <section id="experience">
       <h2>Experience</h2>
       
@@ -261,17 +330,18 @@
           </div>
         </div>
 
-        <!-- Example of how to add a new project with image -->
-        <!--
+
+        <!-- Project 3 -->
         <div class="project">
-           <img src="path/to/your/image.jpg" alt="Project Description">
-           <div class="project-content">
-             <h3>New Project Title</h3>
-             <p>Description goes here...</p>
-             <a href="#">Link</a>
-           </div>
+          <!-- EDIT HERE: Replace src with your image file -->
+          <img src="https://placehold.co/600x400/0066cc/fff?text=Game+of+Life" alt="Game of Life Screenshot">
+          
+          <div class="project-content">
+            <h3>Conways Game of Life</h3>
+            <p>A minimalist program that simulates Conways game of life. It includes dynamic board resizing, button control, and minimal memory usage.</p>
+            <a href="https://github.com/Alex-Nel/conways_game_of_life_GUI">View on GitHub</a>
+          </div>
         </div>
-        -->
 
       </div>
     </section>
@@ -284,13 +354,13 @@
 
 
 
-
+    
     
     <section id="contact">
       <h2>Contact</h2>
       <!-- EDIT HERE: Contact Info -->
       <p>Email: <a href="mailto:alexnelsonpro@gmail.com">alexnelsonpro@gmail.com</a></p>
-      <p>Phone: 727-251-8168</a></p>
+      <p>Phone: 123-456-7890 </a></p>
       <p>
         <a href="https://github.com/Alex-Nel">GitHub</a> · 
         <a href="https://www.linkedin.com/in/alex-nel/">LinkedIn</a>
