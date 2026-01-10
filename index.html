@@ -3,15 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Alex Nelson | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Alex Nelson</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Basic Reset and Font */
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: #333;
+      line-height: 1.6;
+      background-color: #f9fafb;
+    }
+
+    /* Container for centering content */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header Styles */
+    header {
+      padding: 60px 0 40px;
+      text-align: center;
+    }
+    
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #111;
+    }
+
+    header .subtitle {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #0066cc;
+    }
+
+    /* Section Styles */
+    section {
+      margin-bottom: 60px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    /* --- GRID LAYOUT CSS --- */
+    .projects-grid {
+      display: grid;
+      /* This creates exactly 2 columns */
+      grid-template-columns: 1fr 1fr;
+      /* Spacing between grid items */
+      gap: 20px;
+    }
+
+    /* Mobile Responsive: Switch to 1 column on small screens */
+    @media (max-width: 600px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Individual Project Card Styling */
+    .project {
+      background: white;
+      padding: 20px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+
+    .project:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .project h3 {
+      margin-top: 0;
+      color: #111;
+    }
+
+    .project a {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #0066cc;
+      font-weight: 500;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      color: #666;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
 
   <header class="container">
+    <!-- EDIT HERE: Your Name and Title -->
     <h1>Alex Nelson</h1>
     <p class="subtitle">Software Developer / CS Student At University of South Florida</p>
+    
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -23,6 +138,7 @@
 
     <section id="about">
       <h2>About Me</h2>
+      <!-- EDIT HERE: Your Bio -->
       <p>
         A current Junior at the University of South Florida, majoring in Computer Science. Interested in low-level systems programming and/or embedded engineering.
       </p>
@@ -31,24 +147,42 @@
     <section id="projects">
       <h2>Projects</h2>
 
-      <div class="project">
-        <h3>SDRender</h3>
-        <p>A complete software renderer made entirely in C. Capable of full Mesh and Wireframe rendering with proper depth testing. Uses SDL3 for I/O.</p>
-        <a href="https://github.com/Alex-Nel/SDRender">View on GitHub</a>
-      </div>
+      <!-- Wrapper for the Grid Layout -->
+      <div class="projects-grid">
+        
+        <!-- Project 1 -->
+        <!-- EDIT HERE: Copy this entire block to add a new project -->
+        <div class="project">
+          <h3>SDRender</h3>
+          <p>A complete software renderer made entirely in C. Capable of full Mesh and Wireframe rendering with proper depth testing. Uses SDL3 for I/O.</p>
+          <a href="https://github.com/Alex-Nel/SDRender">View on GitHub</a>
+        </div>
 
-      <div class="project">
-        <h3>Conways Game of Life</h3>
-        <p>A minimalist program that simulates Conways game of life. It includes dynamic board resizing, button control, and minimal memory usage.</p>
-        <a href="https://github.com/Alex-Nel/conways_game_of_life_GUI">View on GitHub</a>
+        <!-- Project 2 -->
+        <div class="project">
+          <h3>Conways Game of Life</h3>
+          <p>A minimalist program that simulates Conways game of life. It includes dynamic board resizing, button control, and minimal memory usage.</p>
+          <a href="https://github.com/Alex-Nel/conways_game_of_life_GUI">View on GitHub</a>
+        </div>
+
+        <!-- Example Placeholder (You can remove this or fill it in) -->
+        <!--
+        <div class="project">
+           <h3>New Project Title</h3>
+           <p>Description goes here...</p>
+           <a href="#">Link</a>
+        </div>
+        -->
+
       </div>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
+      <!-- EDIT HERE: Contact Info -->
       <p>Email: <a href="mailto:alexnelsonpro@gmail.com">alexnelsonpro@gmail.com</a></p>
       <p>
-        <a href="https://github.com/Alex-Nel">GitHub</a> ·
+        <a href="https://github.com/Alex-Nel">GitHub</a> · 
         <a href="https://www.linkedin.com/in/alex-nel/">LinkedIn</a>
       </p>
     </section>
