@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 /* Basic Reset and Font */
 body {
   margin: 0;
@@ -56,6 +60,12 @@ h2 {
 }
 
 /* --- EXPERIENCE SECTION CSS --- */
+.experience-timeline {
+  border-left: 2px solid #e5e7eb;
+  padding-left: 30px;
+  margin-left: 10px;
+}
+
 .experience-item {
   display: flex;
   align-items: flex-start; /* Changed to top-align for better layout with lists */
@@ -63,8 +73,28 @@ h2 {
   padding: 20px;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
-  margin-bottom: 15px; /* Spacing between job entries */
+  margin-bottom: 25px; /* Spacing between job entries */
   box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.experience-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.experience-item::before {
+  content: "";
+  position: absolute;
+  left: -42px;
+  top: 53px; /* Aligns with the center of the logo */
+  width: 14px;
+  height: 14px;
+  background: white;
+  border: 3px solid #0066cc;
+  border-radius: 50%;
+  z-index: 1;
 }
 
 .experience-logo {
@@ -144,8 +174,8 @@ h2 {
 }
 
 .project:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
 }
 
 /* New Image Styling */
@@ -154,6 +184,11 @@ h2 {
   height: 250px; /* Fixed height for consistency */
   object-fit: cover; /* Ensures image fills area without stretching */
   border-bottom: 1px solid #e5e7eb;
+  transition: transform 0.3s ease;
+}
+
+.project:hover img {
+  transform: scale(1.03);
 }
 
 /* Padding for the text content below the image */
@@ -171,6 +206,25 @@ h2 {
 
 .project p {
   flex-grow: 1; /* Pushes the link to the bottom */
+}
+
+/* Project Tags */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+  margin-bottom: 5px; /* Less margin bottom since a has top margin */
+}
+
+.tag {
+  background-color: #f3f4f6;
+  color: #374151;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 9999px; /* Pill shape */
+  border: 1px solid #e5e7eb;
 }
 
 .project a {
