@@ -13,7 +13,10 @@
     <br><br><br>
     <!-- EDIT HERE: Your Name and Title -->
     <h1>Alex Nelson</h1>
-    <p class="subtitle">Aspiring Software Developer | Computer Science Student At University of South Florida</p>
+    <p class="subtitle">
+      <span id="typewriter"></span><span class="cursor">|</span>
+    </p>
+    <!-- <p class="subtitle">Aspiring Software Developer | Computer Science Student At University of South Florida</p> -->
 
     <br>
     
@@ -22,6 +25,7 @@
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
+      <button id="theme-toggle" aria-label="Toggle Dark Mode">🌓</button>
     </nav>
   </header>
 
@@ -241,5 +245,72 @@
     <p>© 2026 Alex Nelson</p>
   </footer>
 
+
+
+
+
+
+
+
+
+
+  <script>
+    // Theme Toggle Logic
+    const themeToggle = document.getElementById("theme-toggle");
+    const currentTheme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    
+    if (currentTheme === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+
+    themeToggle.addEventListener("click", () => {
+      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      if (isDark) {
+        document.documentElement.removeAttribute("data-theme");
+        localStorage.setItem("theme", "light");
+      } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+      }
+    });
+
+    // Typewriter Logic
+    const phrases = ["Aspiring Software Developer.", "Tech Enthusiast.", "Computer Science Student."];
+    let currentPhraseIndex = 0;
+    let currentCharIndex = 0;
+    let isDeleting = false;
+    const typewriterElement = document.getElementById("typewriter");
+
+    function type() {
+      const currentPhrase = phrases[currentPhraseIndex];
+      
+      if (isDeleting) {
+        typewriterElement.textContent = currentPhrase.substring(0, currentCharIndex - 1);
+        currentCharIndex--;
+      }
+      else {
+        typewriterElement.textContent = currentPhrase.substring(0, currentCharIndex + 1);
+        currentCharIndex++;
+      }
+
+      let typeSpeed = isDeleting ? 50 : 100;
+
+      if (!isDeleting && currentCharIndex === currentPhrase.length) {
+        typeSpeed = 2000;
+        isDeleting = true;
+      }
+      else if (isDeleting && currentCharIndex === 0) {
+        isDeleting = false;
+        currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+        typeSpeed = 500;
+      }
+
+      setTimeout(type, typeSpeed);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      if(typewriterElement) setTimeout(type, 1000);
+    });
+  </script>
 </body>
 </html>

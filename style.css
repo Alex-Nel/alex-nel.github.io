@@ -1,5 +1,28 @@
 :root {
-  --accent-color: #388b8d; /* Muted Teal */
+  --accent-color: #388b8d;
+  --bg-color: #f9fafb;
+  --text-color: #333;
+  --heading-color: #111;
+  --card-bg: white;
+  --border-color: #e5e7eb;
+  --subtitle-color: #666;
+  --date-color: #888;
+  --tag-bg: #f3f4f6;
+  --tag-text: #374151;
+  --footer-color: #777;
+}
+
+[data-theme="dark"] {
+  --bg-color: #111827;
+  --text-color: #d1d5db;
+  --heading-color: #f9fafb;
+  --card-bg: #1f2937;
+  --border-color: #374151;
+  --subtitle-color: #9ca3af;
+  --date-color: #9ca3af;
+  --tag-bg: #374151;
+  --tag-text: #e5e7eb;
+  --footer-color: #9ca3af;
 }
 
 html {
@@ -10,9 +33,9 @@ html {
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  color: #333;
+  color: var(--text-color);
   line-height: 1.6;
-  background-color: #f9fafb;
+  background-color: var(--bg-color);
 }
 
 /* Container for centering content */
@@ -33,19 +56,19 @@ header h1 {
   font-family: 'Playfair Display', serif;
   /* Manages the size of the name at the top: */
   font-size: 4rem; 
-  color: #111;
+  color: var(--heading-color);
 }
 
 header .subtitle {
   font-size: 1.1rem;
-  color: #666;
+  color: var(--subtitle-color);
   margin-bottom: 20px;
 }
 
 nav a {
   margin: 0 10px;
   text-decoration: none;
-  color: #333;
+  color: var(--text-color);
   font-weight: 600;
 }
 
@@ -59,18 +82,18 @@ section {
 }
 
 h2 {
-  border-bottom: 2px solid #eee;
+  border-bottom: 2px solid var(--border-color);
   padding-bottom: 10px;
   margin-bottom: 20px;
   /* Manages the size of the section header and font: */
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
-  color: #111;
+  color: var(--heading-color);
 }
 
 /* --- EXPERIENCE SECTION CSS --- */
 .experience-timeline {
-  border-left: 2px solid #e5e7eb;
+  border-left: 2px solid var(--border-color);
   padding-left: 30px;
   margin-left: 10px;
 }
@@ -78,9 +101,9 @@ h2 {
 .experience-item {
   display: flex;
   align-items: flex-start; /* Changed to top-align for better layout with lists */
-  background: white;
+  background: var(--card-bg);
   padding: 20px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   margin-bottom: 25px; /* Spacing between job entries */
   box-shadow: 0 1px 2px rgba(0,0,0,0.05);
@@ -100,7 +123,7 @@ h2 {
   top: 53px; /* Aligns with the center of the logo */
   width: 14px;
   height: 14px;
-  background: white;
+  background: var(--card-bg);
   border: 3px solid var(--accent-color);
   border-radius: 50%;
   z-index: 1;
@@ -125,19 +148,19 @@ h2 {
 .experience-company {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #111;
+  color: var(--heading-color);
   margin: 0;
 }
 
 .experience-title {
   font-size: 1rem;
-  color: #555;
+  color: var(--subtitle-color);
   margin: 4px 0 0 0;
 }
 
 .experience-date {
   font-size: 0.85rem;
-  color: #888;
+  color: var(--date-color);
   margin-top: 4px;
 }
 
@@ -145,7 +168,7 @@ h2 {
 .experience-details ul {
   margin: 12px 0 0 0;
   padding-left: 20px;
-  color: #555;
+  color: var(--subtitle-color);
   font-size: 0.95rem;
 }
 
@@ -171,9 +194,9 @@ h2 {
 
 /* Individual Project Card Styling */
 .project {
-  background: white;
+  background: var(--card-bg);
   padding: 0; /* Removed padding so image goes to edge */
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   transition: transform 0.2s;
@@ -192,7 +215,7 @@ h2 {
   width: 100%;
   height: 250px; /* Fixed height for consistency */
   object-fit: cover; /* Ensures image fills area without stretching */
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--border-color);
   transition: transform 0.3s ease;
 }
 
@@ -210,7 +233,7 @@ h2 {
 
 .project h3 {
   margin-top: 0;
-  color: #111;
+  color: var(--heading-color);
 }
 
 .project p {
@@ -227,13 +250,13 @@ h2 {
 }
 
 .tag {
-  background-color: #f3f4f6;
-  color: #374151;
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
   font-size: 0.8rem;
   font-weight: 500;
   padding: 4px 10px;
   border-radius: 9999px; /* Pill shape */
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-color);
 }
 
 .project a {
@@ -252,6 +275,31 @@ h2 {
 footer {
   text-align: center;
   padding: 40px 0;
-  color: #666;
+  color: var(--subtitle-color);
   font-size: 0.9rem;
+}
+
+/* Typewriter Cursor */
+.cursor {
+  display: inline-block;
+  color: var(--accent-color);
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Theme Toggle */
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 10px;
+  vertical-align: middle;
+  color: var(--text-color);
+}
+#theme-toggle:hover {
+  transform: scale(1.1);
 }
